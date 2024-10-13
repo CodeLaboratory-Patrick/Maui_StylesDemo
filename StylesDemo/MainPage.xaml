@@ -3,26 +3,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StylesDemo.MainPage">
 
+    <ContentPage.Resources>
+        <Color x:Key="bgColor">#db3a34</Color>
+        <Color x:Key="textColor">#ffc857</Color>
+
+        <Style TargetType="VerticalStackLayout">
+            <Setter Property="VerticalOptions"
+                    Value="Center"/>
+            <Setter Property="Padding"
+                    Value="30,0"/>
+            <Setter Property="Spacing"
+                    Value="25"/>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource bgColor}"/>
+            <Setter Property="FontAttributes"
+                    Value="Bold"/>
+            <Setter Property="FontSize"
+                    Value="Large"/>
+            <Setter Property="TextColor"
+                    Value="{StaticResource textColor}"/>
+        </Style>
+    </ContentPage.Resources>
+
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25"
-            VerticalOptions="Center">
-           
+        <VerticalStackLayout>
+            <Button Text="LOGIN">
+                <Button.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="BackgroundColor"
+                                Value="Orange"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
             <Button
-            BackgroundColor="#323031"
-            FontAttributes="Bold"
-            FontSize="Large"
-            Text="LOGIN"
-            TextColor="#ffc857" />
-            <Button
-            BackgroundColor="#323031"
-            FontAttributes="Bold"
-            FontSize="Large"
-            Text="VISIT WEBSITE"
-            TextColor="#ffc857" />
-
-
+                Text="VISIT WEBSITE"/>
         </VerticalStackLayout>
     </ScrollView>
 
