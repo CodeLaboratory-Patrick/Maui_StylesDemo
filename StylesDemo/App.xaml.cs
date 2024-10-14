@@ -6,7 +6,7 @@
         {
             InitializeComponent();
 
-            MainPage = new DynamicStylesView();
+            MainPage = new StylesView();
         }
     }
 }
