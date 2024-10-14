@@ -4,7 +4,9 @@
              x:Class="StylesDemo.MainPage">
 
         <ContentPage.Resources>
-
+                <ResourceDictionary>
+                        <Style />
+                </ResourceDictionary>
         </ContentPage.Resources>
 
         <ScrollView>
