@@ -277,4 +277,86 @@ When you use `CustomButton` in your XAML file, it will automatically inherit the
 | **TargetType**                 | Specifies the type of control the style applies to (e.g., `Button`), which also applies to its derived types. |
 | **Automatic Inheritance**      | Derived types automatically receive the style unless overridden explicitly. |
 
+## Overview of Global Styles
+**Global Styles** in **.NET MAUI** are styles defined at the application level that can be applied across all pages and controls within an app. They enable developers to ensure a consistent look and feel throughout the entire application by defining reusable style rules in a central location, typically in the `App.xaml` file. This approach allows for efficient maintenance of styling across the app, making it easier to modify the appearance of multiple controls without individually changing each one.
+
+Global styles are particularly powerful for ensuring that common UI elements such as **buttons**, **labels**, and **entries** have a unified design, providing a cohesive user experience.
+
+## Key Features of Global Styles
+- **Consistency**: Ensures that the same visual style is applied across the entire application.
+- **Centralized Management**: All styles are defined in a central location (`App.xaml`), making it easy to update and manage the appearance of the entire application.
+- **Scalable**: Changes made to a global style will automatically propagate to all controls that use the style, which can be highly beneficial for large projects.
+
+### Global vs. Local Styles
+| Feature                      | Global Styles                                    | Local Styles                                    |
+|------------------------------|--------------------------------------------------|-------------------------------------------------|
+| **Scope**                    | Applies throughout the entire application        | Applies only to a specific page or control      |
+| **Ease of Maintenance**      | Easier to maintain as styles are in one central place | Harder to maintain, as changes need to be replicated in multiple places |
+| **Use Case**                 | Consistent styling across the entire app         | Specific styling for individual elements        |
+
+## Example of Global Styles
+To create a **Global Style** in **.NET MAUI**, you define styles in the `App.xaml` file. This style will then be accessible and applied to all relevant controls throughout the application without explicitly referencing them every time.
+
+### App.xaml Example
+Define global styles for common controls like `Button` and `Label` in `App.xaml`:
+
+```xml
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YourNamespace.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Global Style for Button -->
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Blue" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Padding" Value="10" />
+            </Style>
+
+            <!-- Global Style for Label -->
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="DarkGray" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
+```
+### Explanation
+- **TargetType**: Specifies the type of control the style applies to (e.g., `Button`, `Label`). This means that every button or label in the app will automatically use these styles unless overridden.
+- **Setters**: Define specific property values that apply to the targeted control. For example, all buttons will have a blue background, white text, and bold font.
+
+### Applying Global Styles
+Once these global styles are defined, they are automatically applied to all `Button` and `Label` controls in the application without any need for explicit reference.
+
+```xml
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YourNamespace.MainPage">
+    <StackLayout Padding="20">
+        <!-- This button automatically uses the global button style -->
+        <Button Text="Click Me" />
+        <!-- This label automatically uses the global label style -->
+        <Label Text="Welcome to .NET MAUI!" />
+    </StackLayout>
+</ContentPage>
+```
+- The `Button` and `Label` elements will inherit the styles defined globally in `App.xaml`.
+
+## Practical Use Cases
+### When to Use Global Styles
+- **Consistent Look Across App**: When you want all controls of the same type (e.g., all buttons) to look consistent across the application.
+- **Centralized Control of Styles**: When you want to manage all styles in one place, allowing changes to propagate easily across the entire app.
+- **Large Applications**: Global styles are particularly useful for large applications where it would be inefficient to style each control individually.
+
+## Summary Table of Key Elements
+| Component                      | Description                                      |
+|--------------------------------|--------------------------------------------------|
+| **Global Style**               | A style defined in `App.xaml` that applies to all instances of a specified control type. |
+| **TargetType**                 | Specifies the type of control the global style applies to (e.g., `Button`, `Label`). |
+| **Setters**                    | Defines the property values for the styled controls (e.g., `BackgroundColor`, `FontSize`). |
+| **Centralized Management**     | Allows for easier maintenance and consistency across the application. |
+
 
