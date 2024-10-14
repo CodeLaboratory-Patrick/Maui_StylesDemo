@@ -4,18 +4,15 @@
              x:Class="StylesDemo.MainPage">
 
         <ContentPage.Resources>
-                
+
         </ContentPage.Resources>
 
         <ScrollView>
                 <VerticalStackLayout>
-                        <Button Text="LOGIN"
-                                        Style="{StaticResource buttonStyle}">
-
-                        </Button>
+                        <Button Text="LOGIN"/>
                         <Button
                                 Text="VISIT WEBSITE"
-                                        Style="{StaticResource buttonStyle}">
+                                Style="{StaticResource buttonStyle}">
                         </Button>
                 </VerticalStackLayout>
         </ScrollView>
