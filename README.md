@@ -189,3 +189,11 @@ Once the style is defined, it must be explicitly applied to UI elements using th
 | **TargetType**                 | Specifies the type of control the style applies to (e.g., `Button`). |
 | **Setters**                    | Defines the property values for the styled controls (e.g., `BackgroundColor`, `FontSize`). |
 | **StaticResource**             | Used to reference the defined explicit style.    |
+
+## Explicit Styles vs. Implicit Styles Summary Table
+| Feature                        | Explicit Styles                                  | Implicit Styles                            |
+|--------------------------------|--------------------------------------------------|--------------------------------------------|
+| **Application Method**         | Must be referenced explicitly using a `Style` key| Automatically applied to elements of the specified type |
+| **Ease of Use**                | Requires explicit reference                      | No need for explicit reference; applies globally to target type |
+| **Target Control**             | Specific, allows for more control over which elements use the style | Applies to all elements of the target type |
+| **Use Case**                   | When you need to apply styles selectively        | When you want a consistent style across all elements of a type |
