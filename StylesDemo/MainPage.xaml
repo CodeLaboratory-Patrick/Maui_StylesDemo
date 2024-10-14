@@ -3,40 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StylesDemo.MainPage">
 
-    <ContentPage.Resources>
-        <Color x:Key="bgColor">#db3a34</Color>
-        <Color x:Key="textColor">#ffc857</Color>
+        <ContentPage.Resources>
+                <Color x:Key="bgColor">#db3a34</Color>
+                <Color x:Key="textColor">#ffc857</Color>
 
-        <Style TargetType="VerticalStackLayout">
-            <Setter Property="VerticalOptions"
-                    Value="Center"/>
-            <Setter Property="Padding"
-                    Value="30,0"/>
-            <Setter Property="Spacing"
-                    Value="25"/>
-        </Style>
+                <Style TargetType="StackBase"
+                       ApplyToDerivedTypes="True">
+                        <Setter Property="VerticalOptions"
+                                Value="Center"/>
+                        <Setter Property="Padding"
+                                Value="30,0"/>
+                        <Setter Property="Spacing"
+                                Value="25"/>
+                </Style>
 
-        <Style TargetType="Button" x:Key="buttonStyle">
-            <Setter Property="BackgroundColor"
-                    Value="{StaticResource bgColor}"/>
-            <Setter Property="FontAttributes"
-                    Value="Bold"/>
-            <Setter Property="FontSize"
-                    Value="Large"/>
-            <Setter Property="TextColor"
-                    Value="{StaticResource textColor}"/>
-        </Style>
-    </ContentPage.Resources>
+                <Style TargetType="Button"
+                                x:Key="buttonStyle">
+                        <Setter Property="BackgroundColor"
+                                Value="{StaticResource bgColor}"/>
+                        <Setter Property="FontAttributes"
+                                Value="Bold"/>
+                        <Setter Property="FontSize"
+                                Value="Large"/>
+                        <Setter Property="TextColor"
+                                Value="{StaticResource textColor}"/>
+                </Style>
+        </ContentPage.Resources>
 
-    <ScrollView>
-        <VerticalStackLayout>
-            <Button Text="LOGIN" Style="{StaticResource buttonStyle}">
-               
-            </Button>
-            <Button
-                Text="VISIT WEBSITE" Style="{StaticResource buttonStyle}">
-            </Button>
-        </VerticalStackLayout>
-    </ScrollView>
+        <ScrollView>
+                <VerticalStackLayout>
+                        <Button Text="LOGIN"
+                                        Style="{StaticResource buttonStyle}">
+
+                        </Button>
+                        <Button
+                                Text="VISIT WEBSITE"
+                                        Style="{StaticResource buttonStyle}">
+                        </Button>
+                </VerticalStackLayout>
+        </ScrollView>
 
 </ContentPage>
