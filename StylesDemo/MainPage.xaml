@@ -5,7 +5,7 @@
 
         <ContentPage.Resources>
                 <ResourceDictionary>
-                        <Style />
+                        
                 </ResourceDictionary>
         </ContentPage.Resources>
 
